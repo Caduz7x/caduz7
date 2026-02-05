@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Site com Planilha Excel</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Painel via Planilha Excel</h1>
+      <p>
+        Envie uma planilha <strong>.xlsx</strong> ou <strong>.xls</strong> para carregar os
+        dados automaticamente.
+      </p>
+
+      <section class="controls">
+        <label for="excelFile" class="file-label">Escolher planilha</label>
+        <input id="excelFile" type="file" accept=".xlsx,.xls" />
+
+        <label for="sheetSelect">Aba:</label>
+        <select id="sheetSelect" disabled>
+          <option value="">Selecione uma aba</option>
+        </select>
+
+        <label for="searchInput">Buscar:</label>
+        <input id="searchInput" type="text" placeholder="Digite para filtrar" disabled />
+      </section>
+
+      <p id="status" class="status">Nenhuma planilha carregada.</p>
+
+      <section class="table-wrapper">
+        <table id="dataTable"></table>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
